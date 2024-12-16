@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Evaluación de Proyecto - Proceso de Selección - Modelo Educativo Dual</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la página -->
+        <aside class="sidebar"> <!-- Barra lateral -->
+            <div class="user-info"> <!-- Información del usuario -->
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav> <!-- Navegación -->
+                <ul>
+                    <li><a href="#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header> <!-- Encabezado -->
+                <h1>Proceso de Selección - Modelo Educativo Dual</h1> <!-- Título principal -->
+                <div class="header-actions"> <!-- Acciones en el encabezado -->
+                    <button class="icon-button" aria-label="Notificaciones">🔔</button> <!-- Botón de notificaciones -->
+                    <button class="icon-button" aria-label="Mensajes">💬</button> <!-- Botón de mensajes -->
+                    <button class="icon-button" aria-label="Archivos">📁</button> <!-- Botón de archivos -->
+                </div>
+            </header>
+            <div class="view"> <!-- Vista de la evaluación -->
+                <h2>Evaluación de Proyecto</h2> <!-- Subtítulo de la evaluación -->
+
+                <form id="evaluacionForm"> <!-- Formulario para la evaluación -->
+                    <div class="form-group"> <!-- Grupo de formulario para la fecha -->
+                        <label for="fechaEvaluacion">Fecha de Evaluación:</label> <!-- Etiqueta para el campo de fecha -->
+                        <input type="date" id="fechaEvaluacion" name="fechaEvaluacion" required> <!-- Campo de entrada para la fecha -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para la hora -->
+                        <label for="horaEvaluacion">Hora de Evaluación:</label> <!-- Etiqueta para el campo de hora -->
+                        <input type="time" id="horaEvaluacion" name="horaEvaluacion" required> <!-- Campo de entrada para la hora -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el nombre del candidato -->
+                        <label for="nombreCandidato">Nombre del Candidato:</label> <!-- Etiqueta para el campo de nombre -->
+                        <input type="text" id="nombreCandidato" name="nombreCandidato" required> <!-- Campo de entrada para el nombre -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el proyecto -->
+                        <label for="proyecto">Proyecto Evaluado:</label> <!-- Etiqueta para el campo del proyecto -->
+                        <input type="text" id="proyecto" name="proyecto" required> <!-- Campo de entrada para el proyecto -->
+                    </div>
+
+                    <h3>Evaluación del Proyecto:</h3> <!-- Subtítulo para la evaluación del proyecto -->
+                    <p>3= Excelente, 2= Bueno, 1= Regular</p> <!-- Instrucciones sobre la evaluación -->
+
+                    <table> <!-- Tabla para la evaluación del proyecto -->
+                        <thead>
+                            <tr>
+                                <th>Aspecto a Evaluar</th> <!-- Encabezado de la columna para aspectos a evaluar -->
+                                <th>Evaluación Obtenida</th> <!-- Encabezado de la columna para la evaluación obtenida -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Innovación del Proyecto:</td> <!-- Aspecto a evaluar -->
+                                <td>
+                                    <select id="innovacion" name="innovacion" required> <!-- Selección para la evaluación de innovación -->
+                                        <option value="">Seleccione una opción</option> <!-- Opción por defecto -->
+                                        <option value="3">Excelente</option> <!-- Opción de evaluación excelente -->
+                                        <option value="2">Buena</option> <!-- Opción de evaluación buena -->
+                                        <option value="1">Regular</option> <!-- Opción de evaluación regular -->
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2. Viabilidad del Proyecto:</td> <!-- Aspecto a evaluar -->
+                                <td>
+                                    <select id="viabilidad" name="viabilidad" required> <!-- Selección para la evaluación de viabilidad -->
+                                        <option value="">Seleccione una opción</option> <!-- Opción por defecto -->
+                                        <option value="3">Excelente</option> <!-- Opción de evaluación excelente -->
+                                        <option value="2">Buena</option> <!-- Opción de evaluación buena -->
+                                        <option value="1">Regular</option> <!-- Opción de evaluación regular -->
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3. Impacto Potencial:</td> <!-- Aspecto a evaluar -->
+                                <td>
+                                    <select id="impacto" name="impacto" required> <!-- Selección para la evaluación de impacto -->
+                                        <option value="">Seleccione una opción</option> <!-- Opción por defecto -->
+                                        <option value="3">Excelente</option> <!-- Opción de evaluación excelente -->
+                                        <option value="2">Buena</option> <!-- Opción de evaluación buena -->
+                                        <option value="1">Regular</option> <!-- Opción de evaluación regular -->
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4. Sostenibilidad del Proyecto:</td> <!-- Aspecto a evaluar -->
+                                <td>
+                                    <select id="sostenibilidad" name="sostenibilidad" required> <!-- Selección para la evaluación de sostenibilidad -->
+                                        <option value="">Seleccione una opción</option> <!-- Opción por defecto -->
+                                        <option value="3">Excelente</option> <!-- Opción de evaluación excelente -->
+                                        <option value="2">Buena</option> <!-- Opción de evaluación buena -->
+                                        <option value="1">Regular</option> <!-- Opción de evaluación regular -->
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="form-group"> <!-- Grupo de formulario para comentarios adicionales -->
+                        <label for="comentarios">Comentarios Adicionales:</label> <!-- Etiqueta para el campo de comentarios -->
+                        <textarea id="comentarios" name="comentarios" rows="4"></textarea> <!-- Campo de texto para comentarios -->
+                    </div>
+
+                    <div class="form-group"> <!-- Grupo de formulario para el evaluador -->
+                        <label for="evaluador">Evaluador:</label> <!-- Etiqueta para el campo del evaluador -->
+                        <input type="text" id="evaluador" name="evaluador" value="Dr. Juan Pérez" required> <!-- Campo de entrada para el evaluador -->
+                    </div>
+
+                    <button type="submit" class="button">Enviar Evaluación</button> <!-- Botón para enviar la evaluación -->
+                    <button type="button" class="button" onclick="window.location.href='index.html'">Volver</button> <!-- Botón para volver a la página principal -->
+                    <button type="button" class="button" onclick="downloadPDF('formId', 'fileName.pdf')">Descargar PDF</button> <!-- Botón para descargar el PDF -->
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { // Evento que se ejecuta cuando el DOM está completamente cargado
+            const urlParams = new URLSearchParams(window.location.search); // Obtiene los parámetros de la URL
+            const candidateName = urlParams.get('candidate'); // Obtiene el nombre del candidato de los parámetros
+            if (candidateName) {
+                document.getElementById('nombreCandidato').value = decodeURIComponent(candidateName); // Asigna el nombre del candidato al campo // correspondiente si está presente en la URL
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+    <script src="script.js"></script> <!-- Vincula un archivo JavaScript externo para funcionalidades adicionales -->
+</body>
+</html>

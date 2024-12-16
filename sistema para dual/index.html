@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Sistema de Gestión para estudiantes Dual</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la página -->
+        <aside class="sidebar"> <!-- Barra lateral -->
+            <div class="user-info"> <!-- Información del usuario -->
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav> <!-- Navegación -->
+                <ul>
+                    <li><a href="#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header> <!-- Encabezado -->
+                <h1>Sistema de Gestión para estudiantes Dual</h1> <!-- Título principal -->
+                <div class="header-actions"> <!-- Acciones en el encabezado -->
+                    <div class="search-bar"> <!-- Barra de búsqueda -->
+                        <input type="text" placeholder="Buscar estudiantes..." id="searchInput"> <!-- Campo de entrada para buscar estudiantes -->
+                        <button class="search-button" aria-label="Buscar">🔍</button> <!-- Botón de búsqueda -->
+                    </div>
+                    <button class="icon-button" aria-label="Notificaciones">🔔</button> <!-- Botón de notificaciones -->
+                    <button class="icon-button" aria-label="Mensajes">💬</button> <!-- Botón de mensajes -->
+                    <button class="icon-button" aria-label="Archivos">📁</button> <!-- Botón de archivos -->
+                </div>
+            </header>
+            <div id="home-view" class="view"> <!-- Vista principal -->
+                <div class="program-grid"> <!-- Cuadrícula de programas -->
+                    <div class="program-card"> <!-- Tarjeta de un programa -->
+                        <h2>Ingeniería Financiera</h2> <!-- Título del programa -->
+                        <button class="button get-started-button" data-program="Ingeniería Financiera">Ver Estudiantes <span class="arrow">→</span></button> <!-- Botón para ver estudiantes del programa -->
+                    </div>
+                    <div class="program-card wide"> <!-- Tarjeta de un programa más ancha -->
+                        <h2>Ingeniería en Software</h2> <!-- Título del programa -->
+                        <button class="button get-started-button" data-program="Ingeniería en Software">Ver Estudiantes <span class="arrow">→</span></button> <!-- Botón para ver estudiantes del programa -->
+                    </div>
+                    <div class="program-card"> <!-- Tarjeta de un programa -->
+                        <h2>Ingeniería en Tecnologías de Manufactura</h2> <!-- Título del programa -->
+                        <button class="button get-started-button" data-program="Ingeniería en Tecnologías de Manufactura">Ver Estudiantes <span class="arrow">→</span></button> <!-- Botón para ver estudiantes del programa -->
+                    </div>
+                    <div class="program-card"> <!-- Tarjeta de un programa -->
+                        <h2>Ingeniería en Mecánica Automotriz</h2> <!-- Título del programa -->
+                        <button class="button get-started-button" data-program="Ingeniería en Mecánica Automotriz">Ver Estudiantes <span class="arrow">→</span></button> <!-- Botón para ver estudiantes del programa -->
+                    </div>
+                    <div class="program-card"> <!-- Tarjeta de un programa -->
+                        <h2>Evaluación Dual</h2> <!-- Título del programa -->
+                        <button class="button" onclick="window.location.href='evaluacion_dual.html'">Ir a Evaluación Dual</button> <!-- Botón para ir a la página de evaluación dual -->
+                    </div>
+                </div>
+            </div>
+            <div id="students-view" class="view" style="display: none;"> <!-- Vista para mostrar estudiantes, inicialmente oculta -->
+                <h2 id="program-title"></h2> <!-- Título del programa que se mostrará -->
+                <div class="student-filters"> <!-- Filtros para los estudiantes -->
+                    <button class="button filter-button active" data-filter="all">Todos los Estudiantes</button> <!-- Botón para mostrar todos los estudiantes -->
+                    <button class="button filter-button" data-filter="4">Cuarto Cuatrimestre</button> <!-- Botón para filtrar por cuarto cuatrimestre -->
+                    <button class="button filter-button" data-filter="5">Quinto Cuatrimestre</button> <!-- Botón para filtrar por quinto cuatrimestre -->
+                    <button class="button filter-button" data-filter="6">Sexto Cuatrimestre</button> <!-- Botón para filtrar por sexto cuatrimestre -->
+                    <button class="button filter-button" data-filter="7">Séptimo Cuatrimestre</button> <!-- Botón para filtrar por séptimo cuatrimestre -->
+                    <button class="button filter-button" data-filter="8">Octavo Cuatrimestre</button> <!-- Botón para filtrar por octavo cuatrimestre -->
+                    <button class="button filter-button" data-filter="9">Noveno Cuatrimestre</button> <!-- Botón para filtrar por noveno cuatrimestre -->
+                    <button class="button filter-button" data-filter="10">Décimo Cuatrimestre</button> <!-- Botón para filtrar por décimo cuatrimestre -->
+                </div>
+                <button type="button" class="button" onclick="volver()">Volver</button> <!-- Botón para volver a la vista anterior -->
+                <div id="student-list"></div> <!-- Contenedor para la lista de estudiantes -->
+            </div>
+        </main>
+    </div>
+    <div id="overlay" style="display: none;"></div> <!-- Capa de superposición, inicialmente oculta -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+    <script src="script.js"></script> <!-- Vincula un archivo JavaScript externo para funcionalidades adicionales -->
+</body>
+</html>

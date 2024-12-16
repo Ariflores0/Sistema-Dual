@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Proceso de Selección de Alumnos para Sistema Dual - Entrevista al Candidato</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la página -->
+        <aside class="sidebar"> <!-- Barra lateral -->
+            <div class="user-info"> <!-- Información del usuario -->
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav> <!-- Navegación -->
+                <ul>
+                    <li><a href="#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header> <!-- Encabezado -->
+                <h1>Proceso de Selección de Alumnos para Sistema Dual</h1> <!-- Título principal -->
+                <div class="header-actions"> <!-- Acciones en el encabezado -->
+                    <button class="icon-button" aria-label="Notificaciones">🔔</button> <!-- Botón de notificaciones -->
+                    <button class="icon-button" aria-label="Mensajes">💬</button> <!-- Botón de mensajes -->
+                    <button class="icon-button" aria-label="Archivos">📁</button> <!-- Botón de archivos -->
+                </div>
+            </header>
+            <div class="view"> <!-- Vista de la entrevista -->
+                <h2>Entrevista al Candidato</h2> <!-- Subtítulo para la entrevista -->
+
+                <form id="entrevistaForm"> <!-- Formulario para la entrevista -->
+                    <div class="form-group"> <!-- Grupo de formulario para la fecha -->
+                        <label for="fecha">Fecha:</label> <!-- Etiqueta para el campo de fecha -->
+                        <input type="date" id="fecha" name="fecha" required> <!-- Campo de entrada para la fecha -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para la hora -->
+                        <label for="hora">Hora:</label> <!-- Etiqueta para el campo de hora -->
+                        <input type="time" id="hora" name="hora" required> <!-- Campo de entrada para la hora -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el nombre del postulante -->
+                        <label for="nombrePostulante">Nombre de Postulante:</label> <!-- Etiqueta para el campo del nombre -->
+                        <input type="text" id="nombrePostulante" name="nombrePostulante" required> <!-- Campo de entrada para el nombre del postulante -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el grupo -->
+                        <label for="grupo">Grupo:</label> <!-- Etiqueta para el campo del grupo -->
+                        <input type="text" id="grupo" name="grupo" required> <!-- Campo de entrada para el grupo -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el proyecto -->
+                        <label for="proyecto">Proyecto:</label> <!-- Etiqueta para el campo del proyecto -->
+                        <input type="text" id="proyecto" name="proyecto" value="Sistema Dual" required> <!-- Campo de entrada para el proyecto, con valor predeterminado "Sistema Dual" -->
+                    </div>
+
+                    <h3>Propósito</h3> <!-- Título para la sección de propósito -->
+                    <p>Identificar a alumnas y alumnos que por su perfil puedan ser considerados como candidatas y candidatos al proceso de selección para el Sistema Dual.</p> <!-- Descripción del propósito -->
+
+                    <h3>Instrucciones</h3> <!-- Título para la sección de instrucciones -->
+                    <p>El entrevistador tomará de referencia las aseveraciones de la lista de cotejo para que alrededor de ese tema se establezca la entrevista.</p> <!-- Instrucciones para el entrevistador -->
+                    <p>Asentar en cada aseveración el número que considere de acuerdo a su valoración:</p> <!-- Instrucciones sobre la evaluación -->
+                    <p> 3=Excelente     2=Muy Bueno    1= Bueno</p> <!-- Escala de evaluación -->
+
+                    <table> <!-- Tabla para la evaluación de rubros -->
+                        <thead>
+                            <tr>
+                                <th>Rubros a Considerar</th> <!-- Encabezado de la columna de rubros -->
+                                <th>Evaluación Obtenida</th> <!-- Encabezado de la columna de evaluación -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.- Actitud ante la aceptación de participar en el sistema dual</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval1" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>2.- Visión de su desempeño tanto en la escuela como en la empresa</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval2" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>3.- Apoyo por parte de la familia</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval3" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>4.- Compromiso para el esfuerzo adicional</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval4" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>5.- Respeto a los compromisos establecidos en los convenios que se van a generar</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval5" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>6.- Condiciones con las que cuenta o que tendrá que generar para concluir satisfactoriamente su formación mediante el sistema dual</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval6" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>7.- Solución de problemas y razonamiento.</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval7" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>8.- Manejo de estrés ante el trabajo en la empresa y la universidad.</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval8" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                            <tr>
+                                <td>9.- Compromiso para poner en alto a la UPT.</td> <!-- Rubro a evaluar -->
+                                <td><input type="number" name="eval9" min="1" max="3" required></td> <!-- Campo para la evaluación del rubro -->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="sumatoriaTotal"></div> <!-- Contenedor para la sumatoria total de evaluaciones -->
+                    <div id="promedio"></div> <!-- Contenedor para el promedio de evaluaciones -->
+
+                    <div class="form-group"> <!-- Grupo de formulario para comentarios -->
+                        <label for="comentarios">Comentarios:</label> <!-- Etiqueta para el campo de comentarios -->
+                        <textarea id="comentarios" name="comentarios" rows="4"></textarea> <!-- Campo de texto para comentarios adicionales -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el entrevistador -->
+                        <label for="entrevistador">Entrevistador:</label> <!-- Etiqueta para el campo del entrevistador -->
+                        <input type="text" id="entrevistador" name="entrevistador" value="Dr. Felipe Nerhi Tenorio González" required> <!-- Campo de entrada para el nombre del entrevistador, con valor predeterminado -->
+                    </div>
+
+                    <button type="submit" class="button">Enviar</button> <!-- Botón para enviar el formulario -->
+                    <button type="button" class="button" onclick="window.location.href='index.html'">Volver</button> <!-- Botón para volver a la página principal -->
+                    <button type="button" class="button" onclick="downloadPDF('formId', 'fileName.pdf')">Descargar PDF</button> <!-- Botón para descargar el formulario como PDF -->
+                </form>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { // Espera a que el contenido del DOM esté completamente cargado
+            const urlParams = new URLSearchParams(window.location.search); // Obtiene los parámetros de la URL
+            const studentName = urlParams.get('student'); // Busca el parámetro 'student'
+            if (studentName) {
+                document.getElementById('nombrePostulante').value = decodeURIComponent(studentName); // Si existe, establece el valor del campo 'nombrePostulante'
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+    <script src="script.js"></script> <!-- Vincula un archivo JavaScript externo para funcionalidades adicionales -->
+</body>
+</html>

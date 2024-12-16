@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Proceso de Selección de Alumnos para Sistema Dual</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la página -->
+        <aside class="sidebar"> <!-- Barra lateral -->
+            <div class="user-info"> <!-- Información del usuario -->
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav> <!-- Navegación -->
+                <ul>
+                    <li><a href="index.html#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header> <!-- Encabezado -->
+                <h1>Proceso de Selección de Alumnos para Sistema Dual</h1> <!-- Título principal -->
+            </header>
+            <h2>Perfil del Candidato</h2> <!-- Subtítulo para el perfil del candidato -->
+            <form id="selectionForm"> <!-- Formulario para la selección de candidatos -->
+                <div class="form-group"> <!-- Grupo de formulario para el candidato -->
+                    <label for="candidato">Candidato:</label> <!-- Etiqueta para el campo del candidato -->
+                    <input type="text" id="candidato" name="candidato" required> <!-- Campo de entrada para el nombre del candidato -->
+                </div>
+                <div class="form-group"> <!-- Grupo de formulario para la carrera -->
+                    <label for="carrera">Carrera:</label> <!-- Etiqueta para el campo de carrera -->
+                    <input type="text" id="carrera" name="carrera" required> <!-- Campo de entrada para la carrera -->
+                </div>
+                <div class="form-group"> <!-- Grupo de formulario para el grupo -->
+                    <label for="grupo">Grupo:</label> <!-- Etiqueta para el campo del grupo -->
+                    <input type="text" id="grupo" name="grupo" required> <!-- Campo de entrada para el grupo -->
+                </div>
+                <div class="form-group"> <!-- Grupo de formulario para la fecha -->
+                    <label for="fecha">Fecha:</label> <!-- Etiqueta para el campo de fecha -->
+                    <input type="date" id="fecha" name="fecha" required> <!-- Campo de entrada para la fecha -->
+                </div>
+
+                <table> <!-- Tabla para la evaluación de características del candidato -->
+                    <thead>
+                        <tr>
+                            <th>El candidato posee las características:</th> <!-- Encabezado de la columna de características -->
+                            <th>Evaluador 1</th> <!-- Encabezado para evaluador 1 -->
+                            <th>Evaluador 2</th> <!-- Encabezado para evaluador 2 -->
+                            <th>Evaluador 3</th> <!-- Encabezado para evaluador 3 -->
+                            <th>Evaluador 4</th> <!-- Encabezado para evaluador 4 -->
+                            <th>Evaluador 5</th> <!-- Encabezado para evaluador  5 -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.- Promedio en Historial académico</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_1" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_1" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_1" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_1" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_1" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>2.- Proactivo</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_2" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_2" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_2" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_2" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_2" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>3.- Habilidad interpersonal</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_3" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_3" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_3" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_3" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_3" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>4.- Autodidacta</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_4" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_4" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_4" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_4" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_4" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>5.- Responsable</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_5" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_5" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_5" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_5" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_5" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>6.- Respetuoso</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_6" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_6" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_6" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_6" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_6" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>7.- Apegado a políticas</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_7" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_7" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_7" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_7" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_7" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>8.- Comprometido</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_8" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_8" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_8" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_8" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_8" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>9.- Trabaja en equipo</td> <!-- Característica a evaluar -->
+                            <td><input type="number" name="eval1_9" min="0" max="3" required></td> <!-- Campo para la evaluación del primer evaluador -->
+                            <td><input type="number" name="eval2_9" min="0" max="3" required></td> <!-- Campo para la evaluación del segundo evaluador -->
+                            <td><input type="number" name="eval3_9" min="0" max="3" required></td> <!-- Campo para la evaluación del tercer evaluador -->
+                            <td><input type="number" name="eval4_9" min="0" max="3" required></td> <!-- Campo para la evaluación del cuarto evaluador -->
+                            <td><input type="number" name="eval5_9" min="0" max="3" required></td> <!-- Campo para la evaluación del quinto evaluador -->
+                        </tr>
+                        <tr>
+                            <td>Sumatoria Parcial</td> <!-- Fila para mostrar la sumatoria parcial -->
+                            <td id="sum1"></td> <!-- Campo para la suma de evaluaciones del primer evaluador -->
+                            <td id="sum2"></td> <!-- Campo para la suma de evaluaciones del segundo evaluador -->
+                            <td id="sum3"></td> <!-- Campo para la suma de evaluaciones del tercer evaluador -->
+                            <td id="sum4"></td> <!-- Campo para la suma de evaluaciones del cuarto evaluador -->
+                            <td id="sum5"></td> <!-- Campo para la suma de evaluaciones del quinto evaluador -->
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="sumatoriaTotal"></div> <!-- Contenedor para la sumatoria total de evaluaciones -->
+
+                <h3>Evaluadores</h3> <!-- Título para la sección de evaluadores -->
+                <div class="evaluadores"> <!-- Contenedor para los evaluadores -->
+                    <div class="evaluador"> <!-- Información del primer evaluador -->
+                        <label for="evaluador1">Evaluador 1:</label> <!-- Etiqueta para el primer evaluador -->
+                        <input type="text" id="evaluador1" name="evaluador1" value="" required> <!-- Campo de entrada para el nombre del primer evaluador -->
+                    </div>
+                    <div class="evaluador"> <!-- Información del segundo evaluador -->
+                        <label for="evaluador2">Evaluador 2:</label> <!-- Etiqueta para el segundo evaluador -->
+                        <input type="text" id="evaluador2" name="evaluador2" value="" required> <!-- Campo de entrada para el nombre del segundo evaluador -->
+                    </div>
+                    <div class="evaluador"> <!-- Información del tercer evaluador -->
+                        <label for="evaluador3">Evaluador 3:</label> <!-- Etiqueta para el tercer evaluador -->
+                        <input type="text" id="evaluador3" name="evaluador3" value="" required> <!-- Campo de entrada para el nombre del tercer evaluador -->
+                    </div>
+                    <div class="evaluador"> <!-- Información del cuarto evaluador -->
+                        <label for="evaluador4">Evaluador 4:</label> <!-- Etiqueta para el cuarto evaluador -->
+                        <input type="text" id="evaluador4" name="evaluador4" value="" required> <!-- Campo de entrada para el nombre del cuarto evaluador -->
+                    </div>
+                    <div class="evaluador"> <!-- Información del quinto evaluador -->
+                        <label for="evaluador5">Evaluador 5:</label> <!-- Etiqueta para el quinto evaluador -->
+                        <input type="text" id="evaluador5" name="evaluador5" value="" required> <!-- Campo de entrada para el nombre del quinto evaluador -->
+                    </div>
+                </div>
+
+                <div class="form-group"> <!-- Grupo de formulario para el director -->
+                    <label for="director">Director de Carrera:</label> <!-- Etiqueta para el campo del director -->
+                    <input type="text" id="director" name="director" required> <!-- Campo de entrada para el nombre del director -->
+                </div>
+
+                <button type="submit" class="button">Enviar</button> <!-- Botón para enviar el formulario -->
+                <button type="button" class="button" onclick="window.location.href='index.html'">Volver</button> <!-- Botón para volver a la página principal -->
+                <button type="button" class="button" onclick="downloadPDF('formId', 'fileName.pdf')">Descargar PDF</button> <!-- Botón para descargar el formulario como PDF -->
+            </form>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+    <script src="script.js"></script> <!-- Vincula un archivo JavaScript externo para funcionalidades adicionales -->
+    <script>
+        
+    </script>
+</body>
+</html>

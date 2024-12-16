@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Definición del tipo de documento y del idioma -->
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Contacto de Profesores - Sistema de Gestión para estudiantes Dual</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+    <style>
+        /* Estilos internos para las tarjetas de los profesores */
+        .professor-card {
+            background-color: #f0f0f0; /* Color de fondo de la tarjeta */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 20px; /* Espaciado interno */
+            margin-bottom: 20px; /* Espaciado entre tarjetas */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para dar profundidad */
+        }
+        .professor-card h3 {
+            margin-top: 0; /* Elimina el margen superior del encabezado */
+            color: #333; /* Color del texto del encabezado */
+        }
+        .professor-card p {
+            margin: 5px 0; /* Margen vertical para el párrafo */
+            color: #666; /* Color del texto del párrafo */
+        }
+        .professor-card .contact-info {
+            margin-top: 10px; /* Margen superior para la información de contacto */
+        }
+        .professor-card .contact-info a {
+            display: inline-block; /* Hace que los enlaces se comporten como bloques en línea */
+            margin-right: 10px; /* Espaciado a la derecha de los enlaces */
+            color: #007bff; /* Color del texto de los enlaces */
+            text-decoration: none; /* Sin subrayado en los enlaces */
+        }
+        .professor-card .contact-info a:hover {
+            text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar"> <!-- Barra lateral con información del usuario y navegación -->
+            <div class="user-info">
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="index.html#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="index.html#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header>
+                <h1>Contacto de Profesores</h1> <!-- Título principal -->
+                <div class="header-actions"> <!-- Acciones en el encabezado -->
+                    <div class="search-bar"> <!-- Barra de búsqueda -->
+                        <input type="text" placeholder="Buscar profesores..." id="searchInput"> <!-- Campo de entrada para buscar -->
+                        <button class="search-button" aria-label="Buscar">🔍</button> <!-- Botón de búsqueda -->
+                    </div>
+                    <button class="icon-button" aria-label="Notificaciones">🔔</button> <!-- Botón de notificaciones -->
+                    <button class="icon-button" aria-label="Mensajes">💬</button> <!-- Botón de mensajes -->
+                    <button class="icon-button" aria-label="Archivos">📁</button> <!-- Botón de archivos -->
+                </div>
+            </header>
+            <div id=" professors-view" class="view"> <!-- Vista de los profesores -->
+                <div class="professor-card"> <!-- Tarjeta de un profesor -->
+                    <h3>Dr. Juan Pérez</h3> <!-- Nombre del profesor -->
+                    <p>Profesor de Ingeniería en Software</p> <!-- Especialidad del profesor -->
+                    <div class="contact-info"> <!-- Información de contacto -->
+                        <a href="mailto:juan.perez@uptecamac.edu.mx">juan.perez@uptecamac.edu.mx</a> <!-- Correo electrónico -->
+                        <a href="tel:+525512345678">+52 55 1234 5678</a> <!-- Número de teléfono -->
+                        <a href="#" onclick="sendMessage('Juan Pérez')">Enviar mensaje</a> <!-- Enlace para enviar un mensaje -->
+                    </div>
+                </div>
+                <div class="professor-card"> <!-- Tarjeta de otro profesor -->
+                    <h3>Dra. María González</h3> <!-- Nombre del profesor -->
+                    <p>Profesora de Ingeniería Financiera</p> <!-- Especialidad del profesor -->
+                    <div class="contact-info"> <!-- Información de contacto -->
+                        <a href="mailto:maria.gonzalez@uptecamac.edu.mx">maria.gonzalez@uptecamac.edu.mx</a> <!-- Correo electrónico -->
+                        <a href="tel:+525587654321">+52 55 8765 4321</a> <!-- Número de teléfono -->
+                        <a href="#" onclick="sendMessage('María González')">Enviar mensaje</a> <!-- Enlace para enviar un mensaje -->
+                    </div>
+                </div>
+                <div class="professor-card"> <!-- Tarjeta de otro profesor -->
+                    <h3>Dr. Carlos Rodríguez</h3> <!-- Nombre del profesor -->
+                    <p>Profesor de Ingeniería en Tecnologías de Manufactura</p> <!-- Especialidad del profesor -->
+                    <div class="contact-info"> <!-- Información de contacto -->
+                        <a href="mailto:carlos.rodriguez@uptecamac.edu.mx">carlos.rodriguez@uptecamac.edu.mx</a> <!-- Correo electrónico -->
+                        <a href="tel:+525523456789">+52 55 2345 6789</a> <!-- Número de teléfono -->
+                        <a href="#" onclick="sendMessage('Carlos Rodríguez')">Enviar mensaje</a> <!-- Enlace para enviar un mensaje -->
+                    </div>
+                </div>
+                <div class="professor-card"> <!-- Tarjeta de otro profesor -->
+                    <h3>Dra. Ana Martínez</h3> <!-- Nombre del profesor -->
+                    <p>Profesora de Ingeniería en Mecánica Automotriz</p> <!-- Especialidad del profesor -->
+                    <div class="contact-info"> <!-- Información de contacto -->
+                        <a href="mailto:ana.martinez@uptecamac.edu.mx">ana.martinez@uptecamac.edu.mx</a> <!-- Correo electrónico -->
+                        <a href="tel:+525534567890">+52 55 3456 7890</a> <!-- Número de teléfono -->
+                        <a href="#" onclick="sendMessage('Ana Martínez')">Enviar mensaje</a> <!-- Enlace para enviar un mensaje -->
+                    </div>
+                </div>
+                <div class="professor-card"> <!-- Tarjeta de otro profesor -->
+                    <h3>Dr. Luis Sánchez</h3> <!-- Nombre del profesor -->
+                    <p>Profesor de Matemáticas Aplicadas</p> <!-- Especialidad del profesor -->
+                    <div class="contact-info"> <!-- Información de contacto -->
+                        <a href="mailto:luis.sanchez@uptecamac.edu.mx">luis.sanchez@uptecamac.edu.mx</a> <!-- Correo electrónico -->
+                        <a href="tel:+525545678901">+52 55 4567 8901</a> <!-- Número de teléfono -->
+                        <a href="#" onclick="sendMessage('Luis Sánchez')">Enviar mensaje</a> <!-- Enlace para enviar un mensaje -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        function sendMessage(professorName) { // Función para enviar un mensaje
+            alert(`Enviando mensaje a ${professorName}. Esta función aún no está implementada.`); // Mensaje de alerta
+        }
+
+        document.getElementById('searchInput').addEventListener('input', function(e) { // Evento para la barra de búsqueda
+            const searchTerm = e.target.value.toLowerCase(); // Obtiene el término de búsqueda
+            const professorCards = document.querySelectorAll('.professor-card'); // Selecciona todas las tarjetas de profesores
+            
+            professorCards.forEach(card => { // Itera sobre cada tarjeta de profesor
+                const professorName = card.querySelector('h3').textContent.toLowerCase(); // Obtiene el nombre del profesor
+                const professorDepartment = card.querySelector('p').textContent.toLowerCase(); // Obtiene la especialidad del profesor
+                
+                if (professorName.includes(searchTerm) || professorDepartment.includes(searchTerm)) { // Verifica si el término de búsqueda está en el nombre o especialidad
+                    card.style.display = 'block'; // Muestra la tarjeta si coincide
+                } else {
+                    card.style.display = 'none'; // Oculta la tarjeta si no coincide
+                }
+            });
+        });
+    </script>
+</body>
+</html>

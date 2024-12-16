@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista para dispositivos móviles -->
+    <title>Proceso de Selección de Alumnos para Sistema Dual</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="style.css"> <!-- Vincula una hoja de estilos externa -->
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal de la página -->
+        <aside class="sidebar"> <!-- Barra lateral -->
+            <div class="user-info"> <!-- Información del usuario -->
+                <img src="imagenes/Cetina.png" alt="M. Cetina Quijano" class="user-avatar"> <!-- Imagen del usuario -->
+                <div>
+                    <h2>M. Cetina Quijano</h2> <!-- Nombre del usuario -->
+                    <p><a href="mailto:graciela_cetina@uptecamac.edu.mx">graciela_cetina@uptecamac.edu.mx</a></p> <!-- Correo electrónico del usuario -->
+                </div>
+            </div>
+            <nav> <!-- Navegación -->
+                <ul>
+                    <li><a href="#grades"><span class="icon">📝</span> Documentos</a></li> <!-- Enlace a documentos -->
+                    <li><a href="profesores.html"><span class="icon">👨‍🏫</span> Profesores</a></li> <!-- Enlace a la página de profesores -->
+                </ul>
+            </nav>
+            <div class="sidebar-footer"> <!-- Sección inferior de la barra lateral -->
+                <a href="#settings"><span class="icon">⚙️</span> Ajustes</a> <!-- Enlace a ajustes -->
+                <a href="#logout"><span class="icon">🚪</span> Cerrar sesión</a> <!-- Enlace para cerrar sesión -->
+            </div>
+        </aside>
+        <main class="main-content"> <!-- Contenido principal de la página -->
+            <header> <!-- Encabezado -->
+                <h1>Proceso de Selección de Alumnos para Sistema Dual</h1> <!-- Título principal -->
+                <div class="header-actions"> <!-- Acciones en el encabezado -->
+                    <button class="icon-button" aria-label="Notificaciones">🔔</button> <!-- Botón de notificaciones -->
+                    <button class="icon-button" aria-label="Mensajes">💬</button> <!-- Botón de mensajes -->
+                    <button class="icon-button" aria-label="Archivos">📁</button> <!-- Botón de archivos -->
+                </div>
+            </header>
+            <div class="view"> <!-- Vista de evaluación -->
+                <h2>Evaluación por Candidato</h2> <!-- Subtítulo para la evaluación -->
+
+                <form id="evaluacionForm"> <!-- Formulario para la evaluación -->
+                    <div class="form-group"> <!-- Grupo de formulario para el candidato -->
+                        <label for="candidato">Candidato:</label> <!-- Etiqueta para el campo del candidato -->
+                        <input type="text" id="candidato" name="candidato" required> <!-- Campo de entrada para el nombre del candidato -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para la carrera -->
+                        <label for="carrera">Carrera:</label> <!-- Etiqueta para el campo de carrera -->
+                        <input type="text" id="carrera" name="carrera" required> <!-- Campo de entrada para la carrera -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para el grupo -->
+                        <label for="grupo">Grupo:</label> <!-- Etiqueta para el campo del grupo -->
+                        <input type="text" id="grupo" name="grupo" required> <!-- Campo de entrada para el grupo -->
+                    </div>
+                    <div class="form-group"> <!-- Grupo de formulario para la fecha -->
+                        <label for="fecha">Fecha:</label> <!-- Etiqueta para el campo de fecha -->
+                        <input type="date" id="fecha" name="fecha" required> <!-- Campo de entrada para la fecha -->
+                    </div>
+
+                    <h3>Instrucciones</h3> <!-- Título para la sección de instrucciones -->
+                    <p>Valore al candidato de acuerdo a la escala:</p> <!-- Instrucciones sobre cómo valorar -->
+                    <p>3=Totalmente de acuerdo, 2=Medianamente de acuerdo, 1= De acuerdo</p> <!-- Escala de evaluación -->
+
+                    <table> <!-- Tabla para la evaluación de aspectos -->
+                        <thead>
+                            <tr>
+                                <th>Aspectos Evaluados</th> <!-- Encabezado de la columna de aspectos evaluados -->
+                                <th>Resultados Numéricos o Argumento</th> <!-- Encabezado de la columna de resultados -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.- Promedio en el Historial académico</td> <!-- Aspecto a evaluar -->
+                                <td><input type="number" name="eval1" min="1" max="3" required></td> <!-- Campo para la evaluación del aspecto -->
+                            </tr>
+                            <tr>
+                                <td>2.- Validación del perfil del candidato/a con apreciación colegiada</td> <!-- Aspecto a evaluar -->
+                                <td><input type="number" name="eval2" min="1" max="3" required></td> <!-- Campo para la evaluación del aspecto -->
+                            </tr>
+                            <tr>
+                                <td>3.- Examen psicométrico</td> <!-- Aspecto a evaluar -->
+                                <td><input type="number" name="eval3" min="1" max="3" required></td> <!-- Campo para la evaluación del aspecto -->
+                            </tr>
+                            <tr>
+                                <td>4.- Nivel de Inglés</td> <!-- Aspecto a evaluar -->
+                                <td><input type="number" name="eval4" min="1" max="3" required></td> <!-- Campo para la evaluación del aspecto -->
+                            </tr>
+                            <tr>
+                                <td>5.- Entrevista</td> <!-- Aspecto a evaluar -->
+                                <td><input type="number" name="eval5" min="1" max="3" required></td> <!-- Campo para la evaluación del aspecto -->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div id="sumatoria"></div> <!-- Contenedor para la sumatoria de evaluaciones -->
+
+                    <div class="form-group"> <!-- Grupo de formulario para observaciones -->
+                        <label for="observaciones">Observaciones:</label> <!-- Etiqueta para el campo de observaciones -->
+                        <textarea id="observaciones" name="observaciones" rows="4"></textarea> <!-- Campo de texto para observaciones adicionales -->
+                    </div>
+
+                    <div class="form-group"> <!-- Grupo de formulario para el veredicto -->
+                        <label for="veredicto">Veredicto:</label> <!-- Etiqueta para el campo del veredicto -->
+                        <textarea id="veredicto" name="veredicto" rows="4"></textarea> <!-- Campo de texto para el veredicto -->
+                    </div>
+
+                    <div class="form-group"> <!-- Grupo de formulario para el director de la carrera -->
+                        <label for="director">Director de la Carrera:</label> <!-- Etiqueta para el campo del director -->
+                        <input type="text" id="director" name="director" required> <!-- Campo de entrada para el nombre del director -->
+                    </div>
+
+                    <button type="submit" class="button">Enviar</button> <!-- Botón para enviar el formulario -->
+                    <button type="button" class="button" onclick="window.location.href='index.html'">Volver</button> <!-- Botón para volver a la página principal -->
+                    <button type="button" class="button" onclick="downloadPDF('formId', 'fileName.pdf')">Descargar PDF</button> <!-- Botón para descargar el formulario como PDF -->
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Importa la biblioteca jsPDF para generar PDFs -->
+    <script src="script.js"></script> <!-- Vincula un archivo JavaScript externo para funcionalidades adicionales -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { // Espera a que el contenido del DOM esté completamente cargado
+            const urlParams = new URLSearchParams(window.location.search); // Obtiene los parámetros de la URL
+            const studentName = urlParams.get('student'); // Busca el parámetro 'student'
+            if (studentName) {
+                document.getElementById('candidato').value = decodeURIComponent(studentName); // Si existe, establece el valor del campo 'candidato'
+            }
+        });
+    </script>
+</body>
+</html>
